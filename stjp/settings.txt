@@ -5,5 +5,5 @@ stekjp
 
 Roboto18:14,3,3,1,1
 Roboto51:?
-SansationBold18:15,
+SansationBold18:13.5,3,3,0,0
 
