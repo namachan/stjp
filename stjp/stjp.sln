@@ -10,8 +10,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ShooterGame.json = ShooterGame.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{DCE1BBE7-F53C-420B-97EE-32BCBE5828BC}"
+	ProjectSection(SolutionItems) = preProject
+		assets\Roboto18.uasset = assets\Roboto18.uasset
+		assets\SansationBold18.uasset = assets\SansationBold18.uasset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DCE1BBE7-F53C-420B-97EE-32BCBE5828BC} = {28BA2332-9F80-4288-99B2-8E08AC004DB6}
 	EndGlobalSection
 EndGlobal
