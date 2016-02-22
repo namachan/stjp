@@ -4,6 +4,6 @@ stekjp
 0021-007E,0080-0081,00A1-00FF,1E00-1EFF,3001-3029,3030-303F,3041-3096,3099-30FF
 
 Roboto18:14,3,3,1,1
-Roboto51:
-Sansation Bold18:
+Roboto51:?
+SansationBold18:15,
 
