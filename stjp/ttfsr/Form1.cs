@@ -97,10 +97,7 @@ namespace ttfsr
             int c = iu[0], n = iu[0];
             Action phs = () =>
             {
-                if (c != n)
-                    hs.Add(string.Format("{0:X4}-{1:X4}", c, n));
-                else
-                    hs.Add(string.Format("{0:X4}", c));
+                hs.Add(string.Format("{0:X4}-{1:X4}", c, n));
             };
 
             for (int i = 1; i < iu.Length; n = iu[i++])
