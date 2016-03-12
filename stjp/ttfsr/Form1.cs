@@ -66,6 +66,7 @@ namespace ttfsr
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
             var cb1 = (string)comboBox1.SelectedItem;
             var cb2 = (string)comboBox2.SelectedItem;
             var cb3 = (string)comboBox3.SelectedItem;
@@ -111,6 +112,7 @@ namespace ttfsr
 
             phs();
             textBox1.AppendText(string.Join(",", hs));
+            textBox2.Text = iu.Length.ToString();
         }
     }
 }
