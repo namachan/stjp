@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ttfsr", "ttfsr\ttfsr.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sgjks", "sgjks\sgjks.csproj", "{9F60C811-C7E8-42F8-AB69-79F1F3D9C96A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "u16d", "u16d", "{B018FD93-F2DE-4717-B037-1162479B629C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +42,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCE1BBE7-F53C-420B-97EE-32BCBE5828BC} = {28BA2332-9F80-4288-99B2-8E08AC004DB6}
+		{B018FD93-F2DE-4717-B037-1162479B629C} = {28BA2332-9F80-4288-99B2-8E08AC004DB6}
 	EndGlobalSection
 EndGlobal

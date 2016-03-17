@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //using System.Drawing.Text;
 using System.Windows.Media;
 using System.Globalization;
+using System.IO;
 
 namespace ttfsr
 {
@@ -38,6 +39,7 @@ namespace ttfsr
             var cb1 = (string)comboBox1.SelectedItem;
             var ffs = Fonts.SystemTypefaces.Where(x => x.FontFamily.Source == cb1).Select(x => x.Style.ToString()).Distinct();
             comboBox2.Items.AddRange(ffs.OrderBy(x => x).ToArray());
+            tb4();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,11 +123,11 @@ namespace ttfsr
             return string.Join(",", hs);
         }
 
-        private IEnumerable<ulong> xix(IEnumerable<string> ss)
+        private IEnumerable<uint> xix(IEnumerable<string> ss)
         {
-            Func<string, ulong> xul = (x) =>
+            Func<string, uint> xul = (x) =>
             {
-                return ulong.Parse(x, NumberStyles.AllowHexSpecifier);
+                return uint.Parse(x, NumberStyles.AllowHexSpecifier);
             };
 
             foreach (var s in ss)
@@ -136,8 +138,8 @@ namespace ttfsr
                     yield return xul(x[0]);
                 else
                 {
-                    ulong hx = xul(x[1]);
-                    for (ulong lx = xul(x[0]); lx <= hx; lx++)
+                    uint hx = xul(x[1]);
+                    for (uint lx = xul(x[0]); lx <= hx; lx++)
                         yield return lx;
                 }
             }
@@ -155,6 +157,46 @@ namespace ttfsr
             var s3u = xix(s3).Distinct().OrderBy(x => x).ToArray();
             textBox1.AppendText(sphs(s3u));
             textBox2.Text = s3u.Length.ToString();
+        }
+
+        private void tb4()
+        {
+            var ff = (string)comboBox1.SelectedItem;
+            if (string.IsNullOrEmpty(ff))
+                ff = "MS UI Gothic";
+
+            var t = textBox4.Text;
+            var c1 = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            var c2 = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            using (var g1 = Graphics.FromImage(c1))
+            using (var g2 = Graphics.FromImage(c2))
+            using (var f = new Font(ff, 9))
+            {
+                richTextBox1.Font = f;
+                richTextBox1.Text = t;
+
+                g1.DrawString(t, f, System.Drawing.Brushes.Black, 0, 0);
+                pictureBox1.Image = c1;
+
+                TextRenderer.DrawText(g2, t, f, new Point(), System.Drawing.Color.Black);
+                pictureBox2.Image = c2;
+            }
+
+            textBox5.Text = string.Join(",", t.Select(x => ((ulong)x).ToString("X")));
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            tb4();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var s = textBox6.Text;
+            var u = new UTF32Encoding(false, false, true);
+            File.WriteAllText(textBox7.Text, s, u);
+
+            textBox1.Text = textBox6.Text;
         }
     }
 }
