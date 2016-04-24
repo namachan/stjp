@@ -57,32 +57,32 @@ namespace sgjks
         {
             throw new NotImplementedException();
 
-            textBox3.Text = string.Empty;
-            var j1 = JsonConvert.DeserializeObject<JContainer>(File.ReadAllText(textBox1.Text));
-            var j2 = JsonConvert.DeserializeObject<JContainer>(File.ReadAllText(textBox2.Text));
+            //textBox3.Text = string.Empty;
+            //var j1 = JsonConvert.DeserializeObject<JContainer>(File.ReadAllText(textBox1.Text));
+            //var j2 = JsonConvert.DeserializeObject<JContainer>(File.ReadAllText(textBox2.Text));
 
-            var n1 = string.Join(",", j1["Subnamespaces"].Select(x => x["Namespace"]).OrderBy(x => x));
-            var n2 = string.Join(",", j2["Subnamespaces"].Select(x => x["Namespace"]).OrderBy(x => x));
-            if (n1 != n2)
-            {
-                textBox3.AppendText("Namespace difference");
-                textBox3.AppendText(Environment.NewLine);
-                textBox3.AppendText(string.Format("in:{0}", n1));
-                textBox3.AppendText(Environment.NewLine);
-                textBox3.AppendText(string.Format("mf:{0}", n2));
-                textBox3.AppendText(Environment.NewLine);
-                return;
-            }
+            //var n1 = string.Join(",", j1["Subnamespaces"].Select(x => x["Namespace"]).OrderBy(x => x));
+            //var n2 = string.Join(",", j2["Subnamespaces"].Select(x => x["Namespace"]).OrderBy(x => x));
+            //if (n1 != n2)
+            //{
+            //    textBox3.AppendText("Namespace difference");
+            //    textBox3.AppendText(Environment.NewLine);
+            //    textBox3.AppendText(string.Format("in:{0}", n1));
+            //    textBox3.AppendText(Environment.NewLine);
+            //    textBox3.AppendText(string.Format("mf:{0}", n2));
+            //    textBox3.AppendText(Environment.NewLine);
+            //    return;
+            //}
 
-            foreach (var n in j1.SelectTokens("Subnamespaces").Children())
-            {
-                textBox3.AppendText(string.Format("Namespace[{0}]", n["Namespace"]));
-                textBox3.AppendText(Environment.NewLine);
+            //foreach (var n in j1.SelectTokens("Subnamespaces").Children())
+            //{
+            //    textBox3.AppendText(string.Format("Namespace[{0}]", n["Namespace"]));
+            //    textBox3.AppendText(Environment.NewLine);
 
-                var hs1 = new HashSet<string>(n["Children"].Select(x => (string)x["Source"]["Text"]));
-                var hs2 = j2["Subnamespaces"].Single(x => x["Namespace"] == n["Namespace"])["Children"].Select(x => (string)x["Source"]["Text"]);
+            //    var hs1 = new HashSet<string>(n["Children"].Select(x => (string)x["Source"]["Text"]));
+            //    var hs2 = j2["Subnamespaces"].Single(x => x["Namespace"] == n["Namespace"])["Children"].Select(x => (string)x["Source"]["Text"]);
 
-            }
+            //}
 
             //var r = v1.Values("Children").Select(x => x.Children()).ToArray();
 
