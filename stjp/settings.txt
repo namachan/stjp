@@ -7,7 +7,7 @@ Roboto18_M:Meiryo Ybs,16,1024,1024,11,11,3,3,3,3,-4,8,0.6
 RobotoDistanceField:Yu Gothic UI Semilight,20,768,768,5,5,0,0,0,0,0,16,1.0
 
 stekjp
-Roboto51SlateFont:stekjp,22,Bold,1024,1024,15,15,6,6,3,3,-9,8,0.4
+Roboto51SlateFont:stekjp,22,Bold,1024,1024,15,15,6,6,0,0,0,8,0.4
 Roboto51:stekjp,28,Bold,2048,2048,15,15,6,6,6,6,-10,8,0.7
 SansationBold18:stekjp,15,Bold,2048,2048,11,11,3,3,0,0,-1,AA
 Roboto18:stekjp,16,Bold,1024,1024,11,11,3,3,3,3,-4,8,0.6
